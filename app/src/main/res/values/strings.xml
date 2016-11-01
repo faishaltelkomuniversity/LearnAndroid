@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">LearnMore</string>
+
+    <string-array name="spinner_array">
+    <item>goal</item>
+    <item>checklist</item>
+    <item>contract</item>
+    <item>competition</item>
+        <item>chess</item>
+    </string-array>
+
+</resources>

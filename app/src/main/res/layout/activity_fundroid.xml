@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_fundroid"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="12dp"
+    tools:context="com.example.faishal.learnmore.fundroid">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Have fun with Android!."
+        android:id="@+id/judul"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <ImageView
+        android:layout_width="300px"
+        android:layout_height="300px"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/pinguin"
+        android:id="@+id/pinguin" />
+
+    <TextView
+        android:text="Saya Penguin bukan?"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bukan"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:id="@+id/tombol" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner"
+        android:entries="@array/spinner_array"
+        />
+
+
+
+</LinearLayout>
