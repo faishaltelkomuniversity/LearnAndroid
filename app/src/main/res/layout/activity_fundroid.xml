@@ -18,8 +18,8 @@
         android:textSize="24sp" />
 
     <ImageView
-        android:layout_width="300px"
-        android:layout_height="300px"
+        android:layout_width="800px"
+        android:layout_height="800px"
         android:layout_gravity="center"
         app:srcCompat="@drawable/pinguin"
         android:id="@+id/pinguin" />

@@ -13,14 +13,6 @@ public class Fun {
         this.kata = kata;
     }
 
-    public void setAngka(int angka) {
-        this.angka = angka;
-    }
-
-    public void setKata(String kata) {
-        this.kata = kata;
-    }
-
     public int getAngka() {
         return angka;
     }

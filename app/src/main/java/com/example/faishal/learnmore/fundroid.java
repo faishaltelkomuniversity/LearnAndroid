@@ -24,10 +24,12 @@ public class fundroid extends AppCompatActivity {
     private LinearLayout bekgron;
     private TextView subjudul;
     private Spinner pilihan;
+
     private Funlist nendroids;
     private ArrayList<Fun> list;
-
-    //   private int [] banyak;
+    private int [] banyak;
+    private ListApdet mantab;
+    private ArrayList<String> listkeren;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,9 @@ public class fundroid extends AppCompatActivity {
         nendroids = new Funlist();
         list = nendroids.tambahFundroid();
 
+        mantab = new ListApdet();
+        listkeren = mantab.tambahAndro();
+
 
 //        Random randomgenerator= new Random();
 //        int randomNumber = randomgenerator.nextInt(4);
@@ -53,36 +58,42 @@ public class fundroid extends AppCompatActivity {
         pencetan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String item = (String) pilihan.getSelectedItem();
-                if (item.equals("goal")) {
-                    gambar.setImageResource(list.get(1).getAngka());
-                    bekgron.setBackgroundColor(Color.parseColor("#3F51B5"));
-                    subjudul.setText(list.get(1).getKata());
-                } else if (item.equals("checklist")) {
-                    gambar.setImageResource(list.get(2).getAngka());
-                    subjudul.setText(list.get(2).getKata());
-                    bekgron.setBackgroundColor(Color.parseColor("#E1F5FE"));
-                } else if (item.equals("contract")) {
-                    subjudul.setText(list.get(3).getKata());
-                    gambar.setImageResource(list.get(3).getAngka());
-                    bekgron.setBackgroundColor(Color.parseColor("#2196F3"));
-                } else if (item.equals(("chess"))) {
-                    gambar.setImageResource(list.get(0).getAngka());
-                    subjudul.setText(list.get(0).getKata());
-                    bekgron.setBackgroundColor(Color.parseColor("#E1F5FE"));
-                } else {
-                    gambar.setImageResource(list.get(4).getAngka());
-                    subjudul.setText(list.get(4).getKata());
-                    bekgron.setBackgroundColor(Color.parseColor("#E1F5FE"));
-                }
+//                String item = (String) pilihan.getSelectedItem();
+//                if (item.equals("goal")) {
+//                    gambar.setImageResource(list.get(1).getAngka());
+//                    bekgron.setBackgroundColor(Color.parseColor("#3F51B5"));
+//                    subjudul.setText(list.get(1).getKata());
+//                } else if (item.equals("checklist")) {
+//                    gambar.setImageResource(list.get(2).getAngka());
+//                    subjudul.setText(list.get(2).getKata());
+//                    bekgron.setBackgroundColor(Color.parseColor("#E1F5FE"));
+//                } else if (item.equals("contract")) {
+//                    subjudul.setText(list.get(3).getKata());
+//                    gambar.setImageResource(list.get(3).getAngka());
+//                    bekgron.setBackgroundColor(Color.parseColor("#2196F3"));
+//                } else if (item.equals(("chess"))) {
+//                    gambar.setImageResource(list.get(0).getAngka());
+//                    subjudul.setText(list.get(0).getKata());
+//                    bekgron.setBackgroundColor(Color.parseColor("#E1F5FE"));
+//                } else {
+//                    gambar.setImageResource(list.get(4).getAngka());
+//                    subjudul.setText(list.get(4).getKata());
+//                    bekgron.setBackgroundColor(Color.parseColor("#E1F5FE"));
+//                }
+                final int[] bgColorId={Color.RED,Color.BLUE,Color.GRAY,Color.CYAN,Color.GREEN};
+                int [] banyak= {R.drawable.checklist,R.drawable.competition, R.drawable.chess,R.drawable.bmw, R.drawable.goal};
+                String [] subtitle ={"Ini Checklist","ini Ikan", "ini Catur","ini Mobil","ini gunung"};
 
+                Random randomgenerator = new Random();
+                int randomNumber = randomgenerator.nextInt(5);
+                bekgron.setBackgroundColor(bgColorId[randomNumber]);
 
-                //  int [] banyak= {R.drawable.checklist,R.drawable.competition, R.drawable.chess,R.drawable.bmw, R.drawable.goal};
-                //  Random randomgenerator = new Random();
-                //  int randomNumber = randomgenerator.nextInt(5);
-                //  Toast.makeText(fundroid.this,"randomnumber :"+ randomNumber, Toast.LENGTH_LONG).show();
-                //  gambar.setImageResource(banyak[randomNumber]);
-                //  subjudul.setText("tuh kan bukan penguin!");
+                Random randomGen= new Random();
+                int randomAja = randomGen.nextInt(5);
+                gambar.setImageResource(banyak[randomAja]);
+                subjudul.setText(subtitle[randomAja]);
+
+                tulisan.setText(listkeren.get(randomAja));
             }
 
         });
